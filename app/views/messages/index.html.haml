@@ -6,9 +6,9 @@
    .header-content 
     .header-name sei.kumai
     .header-lists
-     %a(href="a")
+     %link_to
       %i.fa.fa-pencil-square-o
-     %a(href="a")
+     %link_to
       %i.fa.fa-cog
   .groups
    =render 'messages/groups'
@@ -28,4 +28,4 @@
      %label.upload-label(for='upload-icon')
       %i.fa.fa-picture-o
       %input#upload-icon.hidden(type='file')
-    %button(type='submit') Send
+    %button_tag.submit(type='submit') Send

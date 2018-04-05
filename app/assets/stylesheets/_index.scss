@@ -103,6 +103,7 @@ header{
 		height: calc(100% - 100px - 90px);
 		overflow: scroll;
 		padding: 26px 40px 0;
+		background-color: #AAAAAA;
 		.message{
 			padding: 20px 0;
 			position: absolute;
@@ -126,7 +127,7 @@ header{
 		}
 	}
 	.footer{
-		background-color: #AAAAAA;
+		background-color: gray;
 		box-sizing: border-box;
 		height: 90px;
 		padding: 20px 40px 20px 40px;
@@ -157,9 +158,10 @@ header{
     			}
 		}
 		}
-		button{
+		.submit{
 			height: 50px;
 			width: 100px;
+			line-height: 50px;
 			text-align: center;
 			background-color: #38AEF0;
 			color: #FFFFFF;
