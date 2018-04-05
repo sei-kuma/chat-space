@@ -2,11 +2,12 @@ header{
 	background-color: #38AEF0;
 	text-align: center;
 	color: white;
+	height: 24px;
 }
 
 .wrapper{
 	display: flex;
-	height: 100%;
+	height: calc(100% - 24px);
 
 .left-content{
 	box-sizing: border-box;
