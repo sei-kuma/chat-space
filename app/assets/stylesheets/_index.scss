@@ -145,9 +145,17 @@ header{
 			position: absolute;
 			top: 0;
 			right: 0;
-			.fa{
-				position: absolute;
-			}
+			label{
+    			display: inline-block;
+    			font-family: FontAwesome;
+    			font-weight: normal;
+    			font-size: inherit;
+    			text-rendering: auto;
+    			-webkit-font-smoothing: antialiased;
+    			.hidden{
+    				display: none;
+    			}
+		}
 		}
 		button{
 			height: 50px;
