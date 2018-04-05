@@ -25,5 +25,7 @@
    %form
     %input.submit-message(placeholder='type a message')
     .image-file
-     %i.fa.fa-picture-o
+     %label.upload-label(for='upload-icon')
+      %i.fa.fa-picture-o
+      %input#upload-icon.hidden(type='file')
     %button(type='submit') Send
