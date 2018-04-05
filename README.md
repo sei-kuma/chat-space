@@ -1,19 +1,8 @@
-## members
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
-
 ## users
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
+|name|string|index: true, null: false, unique: true|
 |email|string|null: false, unique: true|
 |pass|string|null: false|
 
@@ -26,12 +15,23 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|group_name|string|index: true, null: false|
 
 ### Association
 - has_many :messages
 - has_many :users, through: :members
 - has_many :members
+
+## members
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
 
 ## messages
 
@@ -45,6 +45,3 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
-
-
-
