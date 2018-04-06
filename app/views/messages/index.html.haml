@@ -1,11 +1,11 @@
 %header.header　チャットグループが作成されました。
 
 .wrapper
-  .left-content
+  .leftContent
     .header
       .headerContent 
-        .headerContent_name sei.kumai
-        .headerContent_lists
+        .headerContent__name sei.kumai
+        .headerContent__lists
           %link_to
             %i.fa.fa-pencil-square-o
           %link_to
@@ -13,11 +13,11 @@
     .groups
       =render 'messages/groups'
 
-  .right-content
+  .rightContent
     .header
       .headerGroup
-        .headerGroup_name sampleグループ
-        .headerGroup_member Menber:sei kumai
+        .headerGroup__name sampleグループ
+        .headerGroup__member Menber:sei kumai
       .headerRight Edit
     .messages
       =render 'messages/chat'
@@ -25,7 +25,7 @@
       %form.submit
         %input.submitMessage(placeholder='type a message')
         .submitFile
-          %label.submitFile_uploadLabel(for='upload-icon')
+          %label.submitFile__uploadLabel(for='upload-icon')
             %i.fa.fa-picture-o
-            %input#upload-icon.submitFile_uploadLabel-hidden(type='file')
+            %input#upload-icon.submitFile__uploadLabel--hidden(type='file')
         %button_tag.submitButton(type='submit') Send
