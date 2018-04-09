@@ -1,5 +1,3 @@
-@import "variable";
-
 header {
   background-color: $colorBlue;
   text-align: center;
@@ -10,192 +8,192 @@ header {
 .wrapper {
   display: flex;
   height: calc(100% - 24px);
- 
+
   .leftContent {
     box-sizing: border-box;
-	width: 300px;
-	background-color: #fff;
+    width: 300px;
+    background-color: #fff;
 
-	.header {
-	  background-color: #253141;
-	  height: 100px; 
-	  line-height: 100px;
-	  padding: 0 20px;
-	  position: relative;
+    .header {
+      background-color: #253141;
+      height: 100px; 
+      line-height: 100px;
+      padding: 0 20px;
+      position: relative;
 
-	  &Content {
-	    height: 50px;
-    	width: 100%;
-    	line-height: 50px;
-    	margin: auto 0;
-    	position: absolute;
-    	top: 0;
-    	bottom: 0;
-	    
-	    &__name {
-		  color: $leftFont;
-		  font-weight: Bold;
-		  font-size: 16px;
-		  float: left;
-	    }
-	    
-	    &__lists {
-		  padding-left: 200px;
-		  position: relative;
-		  
-		  i {
-		    color: #fff;
-		    display: inline-block;
-    		font: normal normal normal 14px/1 FontAwesome;
+      &Content {
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+        margin: auto 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        &__name {
+          color: $leftFont;
+          font-weight: Bold;
+          font-size: 16px;
+          float: left;
+        }
+
+        &__lists {
+          padding-left: 200px;
+          position: relative;
+
+          i {
+            color: #fff;
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
-		  }
-	    }
+          }
+        }
       }
     }
-    
+
     .groups {
-	  background-color: #2f3e51;
-	  height: calc(100% - 100px);
-	  padding: 0 20px;
-	  
-	  .group {
-		height: 41px;
-		padding: 20px 0;
-		
-		&__name {
-		  font-size: 15px;
-	      color: $leftFont;
-		  padding-bottom: 5px;
-		}
-		
-		&__newestMessage {
-	      font-size: 11px;
-		  color: $leftFont;
-		}
-	  }
-	}
+      background-color: #2f3e51;
+      height: calc(100% - 100px);
+      padding: 0 20px;
+
+      .group {
+        height: 41px;
+        padding: 20px 0;
+
+        &__name {
+          font-size: 15px;
+          color: $leftFont;
+          padding-bottom: 5px;
+        }
+
+        &__newestMessage {
+          font-size: 11px;
+          color: $leftFont;
+        }
+      }
+    }
   }
 
   .rightContent {
     box-sizing: border-box;
-	width: calc(100% - 300px);
-	
-	.header {
-	  box-sizing: border-box;
-	  height: 100px;
-	  padding: 0 40px;
-	  border: 1px solid #eeeeee;
-	  
-	  &Group {
-		float: left;
-	    padding-top: 20px;
-		
-		&__name {
-		  padding: 15px 0;
-		  font-size: 20px;
-		  color: #333333;
-		}
-		
-		&__member {
-		  font-size: 12px;
-	      color: $grayFont;
-		}
-	  }
-	  
-	  &Right {
-		border: 1px solid #38AEF0;
-    	color: #38AEF0;
-    	float: right;
-    	height: 40px;
-    	line-height: 40px;
-   		margin-top: 28px;
-   		padding: 0 20px;
-	  }	
-	}
-	
-	.messages {
-	  box-sizing: border-box;
-	  height: calc(100% - 100px - 90px);
-	  overflow: scroll;
-	  padding: 26px 40px 0;
-	  background-color: #AAAAAA;
-	  
-	  .message {
-		padding: 20px 0;
-		position: absolute;
-		
-		&__userName {
-	      font-size: 16px;
-		  color: $chatFont;
-		  float: left;
-		}
-		
-		&__time {
-		  font-size: 12px;
-		  color: $grayFont;
-		  float: left;
-		  padding-left: 10px;
-		}
-		
-		&__sentence {
-		  padding-top: 10px; 
-		  font-size: 14px;
-		  color: $chatFont;
-		  clear: both;
-		}
-	  }
-	}
-	
-	.footer {
-	  background-color: gray;
-	  box-sizing: border-box;
-	  height: 90px;
-	  padding: 20px 40px 20px 40px;
-	  position: relative;
-	  
-	  .submit {
-	    
-	    &Message {
-		  height: 50px;
-		  width: calc(100% - 139px);
-		  padding: 0 10px;
-		  position: relative;
-		}
-		
-		&File {
-		  height: 50px;
-		  width: 40px;
-		  margin: 38px 142px 20px 0;
-		  position: absolute;
-		  top: 0;
-		  right: 0;
-		  
-		  &__uploadLabel {
-    	    display: inline-block;
-    		font-family: FontAwesome;
-    		font-weight: normal;
-    		font-size: inherit;
-    		text-rendering: auto;
-    		-webkit-font-smoothing: antialiased;
-    		  
-    		&--hidden {
-    		    display: none;
-    		}
-		  }
-		}
-				
-		&Button {
-		  height: 50px;
-		  width: 100px;
-		  line-height: 50px;
-		  text-align: center;
-		  background-color: $colorBlue;
-		  color: $leftFont;
-		  margin: 0 40px 0 15px;
-		  position: absolute;
-		}
-	  }
-	}
+    width: calc(100% - 300px);
+
+    .header {
+      box-sizing: border-box;
+      height: 100px;
+      padding: 0 40px;
+      border: 1px solid #eeeeee;
+
+      &Group {
+        float: left;
+        padding-top: 20px;
+
+        &__name {
+          padding: 15px 0;
+          font-size: 20px;
+          color: #333333;
+        }
+
+        &__member {
+          font-size: 12px;
+          color: $grayFont;
+        }
+      }
+
+      &Right {
+        border: 1px solid #38AEF0;
+        color: #38AEF0;
+        float: right;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 28px;
+        padding: 0 20px;
+      }	
+    }
+
+    .messages {
+      box-sizing: border-box;
+      height: calc(100% - 100px - 90px);
+      overflow: scroll;
+      padding: 26px 40px 0;
+      background-color: #AAAAAA;
+
+      .message {
+        padding: 20px 0;
+        position: absolute;
+
+        &__userName {
+          font-size: 16px;
+          color: $chatFont;
+          float: left;
+        }
+
+        &__time {
+          font-size: 12px;
+          color: $grayFont;
+          float: left;
+          padding-left: 10px;
+        }
+
+        &__sentence {
+          padding-top: 10px; 
+          font-size: 14px;
+          color: $chatFont;
+          clear: both;
+        }
+      }
+    }
+
+    .footer {
+      background-color: gray;
+      box-sizing: border-box;
+      height: 90px;
+      padding: 20px 40px 20px 40px;
+      position: relative;
+
+      .submit {
+
+        &Message {
+          height: 50px;
+          width: calc(100% - 139px);
+          padding: 0 10px;
+          position: relative;
+        }
+
+        &File {
+          height: 50px;
+          width: 40px;
+          margin: 38px 142px 20px 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          &__uploadLabel {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-weight: normal;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+
+            &--hidden {
+              display: none;
+            }
+          }
+        }
+
+        &Button {
+          height: 50px;
+          width: 100px;
+          line-height: 50px;
+          text-align: center;
+          background-color: $colorBlue;
+          color: $leftFont;
+          margin: 0 40px 0 15px;
+          position: absolute;
+        }
+      }
+    }
   }
 }
