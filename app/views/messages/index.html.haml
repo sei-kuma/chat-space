@@ -1,29 +1,31 @@
 %header.header　チャットグループが作成されました。
 
 .wrapper
- .left-content
-  .header
-   .header-content 
-    .header-name sei.kumai
-    .header-lists
-     %a(href="a")
-      %i.fa.fa-pencil-square-o
-     %a(href="a")
-      %i.fa.fa-cog
-  .groups
-   =render 'messages/groups'
+  .leftContent
+    .header
+      .headerContent 
+        .headerContent__name sei.kumai
+        .headerContent__lists
+          %link_to
+            %i.fa.fa-pencil-square-o
+          %link_to
+            %i.fa.fa-cog
+    .groups
+      =render 'messages/groups'
 
- .right-content
-  .header
-   .header-left
-    .header-group-name sampleグループ
-    .group-member Menber:sei kumai
-   .header-right Edit
-  .messages
-   =render 'messages/chat'
-  .footer
-   %form
-    %input.submit-message(placeholder='type a message')
-    .image-file
-     %i.fa.fa-picture-o
-    %button(type='submit') Send
+  .rightContent
+    .header
+      .headerGroup
+        .headerGroup__name sampleグループ
+        .headerGroup__member Menber:sei kumai
+      .headerRight Edit
+    .messages
+      =render 'messages/chat'
+    .footer
+      %form.submit
+        %input.submitMessage(placeholder='type a message')
+        .submitFile
+          %label.submitFile__uploadLabel(for='upload-icon')
+            %i.fa.fa-picture-o
+            %input#upload-icon.submitFile__uploadLabel--hidden(type='file')
+        %button_tag.submitButton(type='submit') Send
