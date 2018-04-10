@@ -21,35 +21,27 @@ header {
       padding: 0 20px;
       position: relative;
 
-      &Content {
-        height: 50px;
-        width: 100%;
-        line-height: 50px;
-        margin: auto 0;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-
-        &__name {
-          color: $leftFont;
-          font-weight: Bold;
-          font-size: 16px;
-          float: left;
-        }
-
-        &__lists {
-          padding-left: 200px;
-          position: relative;
-
-          i {
-            color: #fff;
-            display: inline-block;
-            font: normal normal normal 14px/1 FontAwesome;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-          }
-        }
+      &__name {
+        color: $leftFont;
+        font-weight: Bold;
+        font-size: 16px;
+        float: left;
       }
+
+      &__lists {
+        padding: 43px 0 0 200px;
+        list-style: none;
+
+        .icon {
+          color: #fff;
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          float: left;
+          padding-left: 5px;
+        }
+      }    
     }
 
     .groups {
@@ -59,24 +51,23 @@ header {
 
       .group {
         height: 41px;
-        padding: 20px 0;
 
         &__name {
           font-size: 15px;
           color: $leftFont;
-          padding-bottom: 5px;
+          padding: 20px 0 5px 0;
         }
 
         &__newestMessage {
           font-size: 11px;
           color: $leftFont;
+          padding-bottom: 20px;
         }
       }
     }
   }
 
   .rightContent {
-    box-sizing: border-box;
     width: calc(100% - 300px);
 
     .header {
