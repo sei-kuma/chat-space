@@ -20,12 +20,12 @@
         .headerGroup__member Menber:sei kumai
       .headerRight Edit
     .messages
-      =render 'messages/chat'
-    .footer
-      %form.submit
-        %input.submitMessage(placeholder='type a message')
-        .submitFile
-          %label.submitFile__uploadLabel(for='upload-icon')
-            %i.fa.fa-picture-o
-            %input#upload-icon.submitFile__uploadLabel--hidden(type='file')
-        %button_tag.submitButton(type='submit') Send
+      =render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
