@@ -1,13 +1,6 @@
-header {
-  background-color: $colorBlue;
-  text-align: center;
-  color: white;
-  height: 24px;
-}
-
 .wrapper {
   display: flex;
-  height: calc(100% - 24px);
+  height: 100% ;
 
   .leftContent {
     box-sizing: border-box;
