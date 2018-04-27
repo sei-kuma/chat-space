@@ -8,10 +8,10 @@ $(function(){
     var html = `<div class="message">
                   <ul class="upper-message">
                     <li class="upper-message__user-name">
-                      ${message.user.name}
+                      ${message.user_name}
                     </li>
                     <li class="upper-message__date">
-                      ${message.created_at}
+                      ${message.time}
                     </li>
                   </ul>
                   <ul class="lower-message">
@@ -39,7 +39,7 @@ $(function(){
       console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fast')
+      $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fasts')
       $('.form__submit').prop("disabled", false)
       $('.new_message')[0].reset();
     })
