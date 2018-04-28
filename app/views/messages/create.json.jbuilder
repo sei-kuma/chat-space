@@ -1,4 +1,4 @@
 json.content  @message.content
 json.image  @message.image.url
 json.user_name  @message.user.name
-json.time @message.created_at
+json.time simple_time(@message.created_at)

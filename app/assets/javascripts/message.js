@@ -1,4 +1,3 @@
-
 $(function(){
   function buildHTML(message){
     var img = "";
@@ -36,7 +35,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html)
       $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fasts')
