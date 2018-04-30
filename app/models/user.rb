@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :messages
   has_many :group_users
   has_many :groups, through: :group_users
+
+  scope :users, -> {where("name LIKE(?) AND id !=?", "%#{params[:keyword]}%", current_user.id)}
 end
