@@ -65,7 +65,11 @@ $(function(){
       $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight})
     })
   }
-  setInterval(getMsg, 5000)
+  var pathname = location.pathname.match(/messages/)
+  var reg = RegExp(pathname);
+  if(reg.test("messages")){
+    setInterval(getMsg, 1000)
+  }
 })
   return false;
 })
