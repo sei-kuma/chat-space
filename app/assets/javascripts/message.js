@@ -38,7 +38,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight})
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
       $('.form__submit').prop("disabled", false)
       $('.new_message')[0].reset();
     })
@@ -48,11 +48,11 @@ $(function(){
   })
 
   function getMessage() {
-    var newMessageId = $('.messages').last().attr('message-id')
-    var url = $('#new_message').attr('action');
+    var newMessageId = $('.message').last().attr('message-id')
+    console.log(newMessageId)
     $.ajax ({
       type: 'GET',
-      url: url,
+      url: location.href,
       data: { id: newMessageId },
       dataType: 'json'
     })
@@ -62,15 +62,14 @@ $(function(){
         $('.messages').append(html)
       })
       if (data.length > 0) {
-        console.log(data)
-        $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight})
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
       }
     })
   }
   var pathname = location.pathname.match(/messages/)
   var reg = RegExp(pathname);
   if(reg.test("messages")){
-    setInterval(getMessage, 5000)
+    setInterval(getMessage, 1000)
   }
 })
   return false;
