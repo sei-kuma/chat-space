@@ -16,9 +16,12 @@
   .rightContent
     .header
       .headerGroup
-        .headerGroup__name sampleグループ
-        .headerGroup__member Menber:sample
-      .headerRight Edit
+        .headerGroup__name
+          = @group.name
+        .headerGroup__member
+          Member: #{@members.join(",")}
+      .headerRight
+        = link_to "edit", edit_group_path(@group)
     .messages.js-messages
       =render @messages
     .form

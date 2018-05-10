@@ -56,11 +56,11 @@ $(function(){
       dataType: 'json'
     })
     .done(function(data){
+      if (data.length > 0) {
       data.forEach(function(message) {
         var html = buildHTML(message)
         $('.messages').append(html)
       })
-      if (data.length > 0) {
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
       }
     })
