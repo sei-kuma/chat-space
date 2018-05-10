@@ -1,10 +1,11 @@
+$(document).on('turbolinks:load',function(){
 $(function(){
   function buildHTML(message){
     var img = "";
     if (message.image){
       img = `<img src=${message.image} class: 'lower-message__image'>`
     }
-    var html = `<div class="message">
+    var html = `<div class="message" message-id = "${message.id}">
                   <ul class="upper-message">
                     <li class="upper-message__user-name">
                       ${message.user_name}
@@ -37,7 +38,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fasts')
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
       $('.form__submit').prop("disabled", false)
       $('.new_message')[0].reset();
     })
@@ -45,4 +46,30 @@ $(function(){
       alert('error');
     })
   })
-});
+
+  function getMessage() {
+    var newMessageId = $('.message').last().attr('message-id')
+    $.ajax ({
+      type: 'GET',
+      url: location.href,
+      data: { id: newMessageId },
+      dataType: 'json'
+    })
+    .done(function(data){
+      if (data.length > 0) {
+        data.forEach(function(message) {
+          var html = buildHTML(message)
+          $('.messages').append(html)
+        })
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
+      }
+    })
+  }
+  var pathname = location.pathname.match(/messages/)
+  var reg = RegExp(pathname);
+  if(reg.test("messages")){
+    setInterval(getMessage, 1000)
+  }
+})
+  return false;
+})
