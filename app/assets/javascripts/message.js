@@ -5,7 +5,7 @@ $(function(){
     if (message.image){
       img = `<img src=${message.image} class: 'lower-message__image'>`
     }
-    var html = `<div class="message" msg-id = "${message.id}">
+    var html = `<div class="message" message-id = "${message.id}">
                   <ul class="upper-message">
                     <li class="upper-message__user-name">
                       ${message.user_name}
@@ -47,28 +47,30 @@ $(function(){
     })
   })
 
-  function getMsg() {
-    var newMsgId = $('.message').last().attr('msg-id')
+  function getMessage() {
+    var newMessageId = $('.messages').last().attr('message-id')
     var url = $('#new_message').attr('action');
     $.ajax ({
       type: 'GET',
       url: url,
-      data: { id: newMsgId },
+      data: { id: newMessageId },
       dataType: 'json'
     })
     .done(function(data){
-      if (data.length == 0) return false
-      data.forEach(function(msg) {
-        var html = buildHTML(msg)
+      data.forEach(function(message) {
+        var html = buildHTML(message)
         $('.messages').append(html)
       })
-      $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight})
+      if (data.length > 0) {
+        console.log(data)
+        $('.messages.js-messages').animate({scrollTop: $('.messages')[0].scrollHeight})
+      }
     })
   }
   var pathname = location.pathname.match(/messages/)
   var reg = RegExp(pathname);
   if(reg.test("messages")){
-    setInterval(getMsg, 1000)
+    setInterval(getMessage, 5000)
   }
 })
   return false;
