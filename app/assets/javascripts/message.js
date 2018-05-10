@@ -57,10 +57,10 @@ $(function(){
     })
     .done(function(data){
       if (data.length > 0) {
-      data.forEach(function(message) {
-        var html = buildHTML(message)
-        $('.messages').append(html)
-      })
+        data.forEach(function(message) {
+          var html = buildHTML(message)
+          $('.messages').append(html)
+        })
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
       }
     })

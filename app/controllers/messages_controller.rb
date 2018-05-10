@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    @members = @group.users.inject([]) { |members, user| members << user.name }
+    @members = @group.users.pluck(:name)
     respond_to do |format|
       format.html
       format.json{ @newmsgs = @messages.where("id > ? ", params[:id]) }
