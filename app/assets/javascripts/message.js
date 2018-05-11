@@ -1,4 +1,3 @@
-$(document).on('turbolinks:load',function(){
 $(function(){
   function buildHTML(message){
     var img = "";
@@ -70,6 +69,4 @@ $(function(){
   if(reg.test("messages")){
     setInterval(getMessage, 5000)
   }
-})
-  return false;
 })
