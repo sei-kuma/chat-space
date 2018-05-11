@@ -68,7 +68,7 @@ $(function(){
   var pathname = location.pathname.match(/messages/)
   var reg = RegExp(pathname);
   if(reg.test("messages")){
-    setInterval(getMessage, 1000)
+    setInterval(getMessage, 5000)
   }
 })
   return false;
